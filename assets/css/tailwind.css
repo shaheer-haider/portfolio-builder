@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+@layer base {
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
 .btn-primary {
     @apply px-4 py-2 text-lg border border-transparent text-bgSecondary bg-bgBright hover:text-bgBright hover:bg-bgSecondary hover:border-bgBright rounded-lg shadow-[0px_4px_4px_#00000040] transition-all;
 }
@@ -9,3 +19,8 @@
 .btn-secondary {
     @apply px-4 py-2 text-lg text-fgBright hover:text-bgBright transition-all;
 }
+
+* {
+    scroll-behavior: smooth;
+}
+

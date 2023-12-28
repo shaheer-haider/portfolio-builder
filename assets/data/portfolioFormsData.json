@@ -89,7 +89,7 @@
             {
                 "id": "place_to_relocate",
                 "label": "Were would you consider relocating to?",
-                "value": "",
+                "value": [],
                 "type": "checkbox",
                 "required": true,
                 "options": [
@@ -185,19 +185,19 @@
                 ]
             },
             {
-                "id": "role_interest",
+                "id": "interested_engineering_role",
                 "label": "Which engineering roles are you most interested in? (Choose up to four)",
                 "value": "",
-                "type": "radio",
+                "type": "select",
                 "required": true,
                 "options": [
                     {
-                        "label": "Yes",
-                        "value": "yes"
+                        "label": "Software Engineering",
+                        "value": "Software Engineering"
                     },
                     {
-                        "label": "No",
-                        "value": "no"
+                        "label": "Hardware Engineering",
+                        "value": "Hardware Engineering"
                     }
                 ]
             },
@@ -227,9 +227,48 @@
                 ]
             },
             {
+                "id": "name_of_institution",
+                "label": "What is the name of the school or bootcamp you are attending?",
+                "value": "",
+                "type": "text",
+                "required": true,
+                "placeholder": "",
+                "condition": "is_college_or_bootcamp_student"
+            },
+            {
+                "id": "graduation_month_year",
+                "label": "When do you graduate?",
+                "value": {
+                    "month": null,
+                    "year": null
+                },
+                "type": "month_year",
+                "required": true,
+                "placeholder": "",
+                "condition": "is_college_or_bootcamp_student"
+            },
+            {
+                "id": "interested_role",
+                "label": "What kinda role you interested in?",
+                "value": "",
+                "type": "radio",
+                "required": true,
+                "options": [
+                    {
+                        "label": "An Internship (During the summer)",
+                        "value": "internship"
+                    },
+                    {
+                        "label": "A full-time role after graduation",
+                        "value": "full-time"
+                    }
+                ],
+                "condition": "is_college_or_bootcamp_student"
+            },
+            {
                 "id": "job_type_interest",
                 "label": "What job type(s) are you most interested in?",
-                "value": "",
+                "value": [],
                 "type": "checkbox",
                 "required": true,
                 "options": [
@@ -245,7 +284,9 @@
                         "label": "Cofounder",
                         "value": "Cofounder"
                     }
-                ]
+                ],
+                "condition": "is_college_or_bootcamp_student",
+                "negative": true
             },
             {
                 "id": "years_of_experience_in_software_engineering",
@@ -253,19 +294,61 @@
                 "value": "",
                 "type": "text",
                 "required": true,
-                "placeholder": ""
+                "placeholder": "",
+                "condition": "is_college_or_bootcamp_student",
+                "negative": true
             }
         ]
     },
     {
         "id": "experience",
         "label": "Experience",
-        "completed": false
+        "completed": false,
+        "formData": [
+            {
+                "id": "work_history",
+                "label": "Work History",
+                "value": "",
+                "type": "work_history",
+                "required": true
+            },
+            {
+                "id": "education",
+                "label": "Education",
+                "value": "",
+                "type": "education",
+                "required": true
+            }
+        ]
     },
     {
         "id": "skills",
         "label": "Skills",
-        "completed": false
+        "completed": false,
+        "formData": [
+            {
+                "id": "skills",
+                "label": "Which technologies/skills are you most experienced and interested in working with? (Choose up to 10)",
+                "value": [],
+                "type": "skills",
+                "required": true,
+                "options": [
+                    "Python",
+                    "HTML",
+                    "JavaScript",
+                    "TypeScript",
+                    "AWS",
+                    "Scrapping",
+                    "DevOps",
+                    "Java",
+                    "Azure",
+                    "Project Management",
+                    "NS Lookup",
+                    "Ethical Hacking",
+                    "Audit and compliance"
+                ]
+            }
+        ]
     },
     {
         "id": "career",
