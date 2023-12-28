@@ -10,6 +10,7 @@
       <input
         v-if="props.fieldData.type == 'text'"
         v-model="props.fieldData.value"
+        :required="props.fieldData.required"
         type="text"
         :placeholder="props.fieldData.placeholder"
         class="px-3 py-2 mt-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full"
@@ -19,6 +20,7 @@
           <input
             v-model="props.fieldData.value"
             :id="props.fieldData.id + index"
+            :required="props.fieldData.required"
             :value="option.value"
             type="radio"
             :name="props.fieldData.id"
@@ -55,6 +57,7 @@
           </div>
           <select
             v-model="props.fieldData.value"
+            :required="props.fieldData.required"
             class="appearance-none px-3 py-2 bg-bgSecondary border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full"
           >
             <option selected disabled>Select...</option>
@@ -67,6 +70,7 @@
       <div v-else-if="props.fieldData.type == 'month_year'" class="space-y-3 space-x-2">
         <input
           v-model="props.fieldData.value.month"
+          :required="props.fieldData.required"
           type="number"
           placeholder="Month"
           min="1000"
@@ -75,6 +79,7 @@
         />
         <input
           v-model="props.fieldData.value.year"
+          :required="props.fieldData.required"
           type="number"
           placeholder="Year"
           class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-20 appearance-none"

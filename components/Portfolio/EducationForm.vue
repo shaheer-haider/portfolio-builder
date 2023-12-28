@@ -33,44 +33,44 @@
             ></textarea>
           </div>
           <div
-            v-else-if="field.type == 'fromTo'"
-            class="flex justify-between w-full max-w-[600px] ml-4"
-          >
-            <div class="space-x-3">
-              <span class="font-semibold text-lg">From</span>
-              <input
-                v-model="field.value.from.month"
-                type="number"
-                placeholder="Month"
-                min="1000"
-                max="9999"
-                class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-28"
-              />
-              <input
-                v-model="field.value.from.year"
-                type="number"
-                placeholder="Year"
-                class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-20 appearance-none"
-              />
-            </div>
-            <div class="space-x-3">
-              <span class="font-semibold text-lg">To</span>
-              <input
-                v-model="field.value.to.month"
-                type="number"
-                placeholder="Month"
-                min="1000"
-                max="9999"
-                class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-28"
-              />
-              <input
-                v-model="field.value.to.year"
-                type="number"
-                placeholder="Year"
-                class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-20 appearance-none"
-              />
-            </div>
+          v-else-if="field.type == 'fromTo'"
+          class="flex flex-col md:flex-row justify-between w-full max-w-[600px] lg:ml-4"
+        >
+          <div class="md:space-x-3">
+            <span class="font-semibold text-lg">From</span>
+            <input
+              v-model="field.value.from.month"
+              type="number"
+              placeholder="Month"
+              min="1000"
+              max="9999"
+              class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full md:w-28"
+            />
+            <input
+              v-model="field.value.from.year"
+              type="number"
+              placeholder="Year"
+              class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full md:w-20 appearance-none"
+            />
           </div>
+          <div class="md:space-x-3">
+            <span class="font-semibold text-lg">To</span>
+            <input
+              v-model="field.value.to.month"
+              type="number"
+              placeholder="Month"
+              min="1000"
+              max="9999"
+              class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full md:w-28"
+            />
+            <input
+              v-model="field.value.to.year"
+              type="number"
+              placeholder="Year"
+              class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full md:w-20 appearance-none"
+            />
+          </div>
+        </div>
         </template>
         <div class="flex justify-end">
           <button

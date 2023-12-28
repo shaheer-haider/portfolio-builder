@@ -1,8 +1,8 @@
 <template>
   <div class="bg-bgSecondary min-h-[600px] pb-16 pt-8 page-container">
-    <div class="m-auto flex justify-center gap-10">
-      <img src="@/assets/images/edit-avatar.png" class="w-[150px] h-[150px] mt-7" alt="" />
-      <div class="max-w-[800px]">
+    <div class="m-auto flex flex-col lg:flex-row justify-center gap-10">
+      <img src="@/assets/images/edit-avatar.png" class="w-[150px] h-[150px] m-auto lg:m-0 mt-7" alt="" />
+      <div class="max-w-[800px] px-8 m-auto lg:m-0">
         <form @submit.prevent="saveProfileFormSubmit" class="grid grid-cols-2 gap-x-5">
           <div
             v-for="field in formFields"
@@ -30,9 +30,9 @@
               class="border-b-2 border-gray-300 focus:outline-none focus:border-fgSecondary text-xl font-light pb-2 text-fgSecondary w-full"
             />
           </div>
-          <div class="py-10 space-x-2">
-            <button class="btn-primary">SAVE</button>
-            <button class="btn-secondary">CANCEL</button>
+          <div class="py-10 gap-2 flex flex-wrap">
+            <button class="btn-primary  w-28 sm:w-max">SAVE</button>
+            <button class="btn-secondary w-28 sm:w-max">CANCEL</button>
           </div>
         </form>
         <div class="space-y-4 pt-6">
@@ -56,14 +56,14 @@ const formFields = ref([
     label: "First Name",
     value: "",
     focused: false,
-    class: "w-80",
+    class: "w-full md:w-80 col-span-2 md:col-span-1",
   },
   {
     id: "lastName",
     label: "Last Name",
     value: "",
     focused: false,
-    class: "w-80",
+    class: "w-full md:w-80 col-span-2 md:col-span-1",
   },
   {
     id: "email",

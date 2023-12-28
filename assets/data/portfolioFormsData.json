@@ -1,11 +1,5 @@
 [
     {
-        "id": "personal-info",
-        "label": "Personal Info",
-        "completed": true,
-        "formData": []
-    },
-    {
         "id": "location",
         "label": "Location",
         "completed": true,
@@ -303,6 +297,7 @@
     {
         "id": "experience",
         "label": "Experience",
+        "tagline": "Fill out your education and experience manually or <a href='#' class='text-bgBright'>click here</a> to upload a resume or LinkedIn profile.",
         "completed": false,
         "formData": [
             {
@@ -349,15 +344,5 @@
                 ]
             }
         ]
-    },
-    {
-        "id": "career",
-        "label": "Career",
-        "completed": false
-    },
-    {
-        "id": "share",
-        "label": "Share",
-        "completed": false
     }
 ]

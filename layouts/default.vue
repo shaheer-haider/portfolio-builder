@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen">
-    <NuxtPage class="mt-36 w-full mx-auto" />
+    <NuxtPage />
   </div>
 </template>
 
