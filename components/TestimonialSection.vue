@@ -5,7 +5,7 @@
       companies
     </h4>
 
-    <div class="flex items-center md:flex-row flex-col gap-8 h-[600px] py-8">
+    <div class="flex items-center md:flex-row flex-col gap-8 min-h-[600px] py-8">
       <div class="md:w-1/2">
         <img src="@/assets/testimonial_iilustation.png" alt="testimonial_iilustation" />
       </div>
@@ -13,7 +13,7 @@
         <div class="slider space-y-14">
           <div
             v-for="x in 5"
-            class="slide rounded-md px-10 py-10 border border-[#EA6A1C] bg-white"
+            class="slide rounded-md px-4 sm:px-8 md:px-10 py-8 md:py-10  border border-[#EA6A1C] bg-white"
           >
             <p class="text-start">
               We consistently found high quality candidates for very niche positions and a
