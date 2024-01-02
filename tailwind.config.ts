@@ -4,11 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        bgPrimary: "#F6F6F0",
+        bgPrimary: "#FCF7F3",
         bgSecondary: "#FFFFFF",
-        bgBright: "#DF703B",
+        bgSecondary2: "#12182E",
+        bgBright: "#EA6A1C",
         fgPrimary: "#949494",
         fgSecondary: "#212121",
+        fgSecondary2: "#12182E",
         fgBright: "#ECA74D",
       }
     },

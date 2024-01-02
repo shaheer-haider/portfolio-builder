@@ -1,6 +1,13 @@
 <template>
-    <div class="pt-20 m-auto w-48 flex flex-col">
-        <a class="bg-slate-100 px-2 py-1 rounded m-2" href="/portfolio">Portfolio Forms</a>
-        <a class="bg-slate-100 px-2 py-1 rounded m-2" href="/profile">Profile</a>
+  <div class="bg-[#FCF7F3] overflow-hidden">
+    <Navbar />
+    <Hero />
+    <FeatureSection />
+    <Feature2Section />
+    <LazyTestimonialSection />
+    <div class="pb-16 px-4">
+      <CTASection />
     </div>
+    <Footer />
+  </div>
 </template>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,13 +14,29 @@
         margin: 0;
     }
 }
+
+
+* {
+    font-family: 'League Spartan' , 'Barlow', sans-serif;
+}
+
 .btn-primary {
     @apply px-4 py-2 text-lg border border-transparent text-bgSecondary bg-bgBright hover:text-bgBright hover:bg-bgSecondary hover:border-bgBright rounded-lg shadow-[0px_4px_4px_#00000040] transition-all;
+}
+
+.landing-page-btn-primary {
+    @apply px-6 py-[10px] text-base border border-transparent text-bgSecondary bg-bgBright hover:text-bgBright hover:bg-bgSecondary hover:border-bgBright rounded-full transition-all;
 }
 
 .btn-secondary {
     @apply px-4 py-2 text-lg text-fgBright hover:text-bgBright transition-all;
 }
+
+.landing-page-btn-secondary {
+    @apply px-6 py-[10px] text-base border border-transparent text-fgSecondary2 hover:text-bgBright transition-all;
+}
+
+
 
 * {
     scroll-behavior: auto;
