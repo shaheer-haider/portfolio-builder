@@ -38,9 +38,8 @@
         teams to hire at a fraction of the cost.
       </p>
       <div class="pt-4">
-        <button class="px-6 text-white rounded-full pb-[10px] pt-3 bg-[#EA6A1C]"
-          >Get Started</button
-        >
+        <NuxtLink to="/portfolio" class="px-6 text-white rounded-full py-3 bg-[#EA6A1C] z-10 relative"
+          >Get Started</NuxtLink>
       </div>
     </div>
   </div>

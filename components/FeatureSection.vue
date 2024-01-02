@@ -14,7 +14,7 @@
     </div>
     <div class="lg:w-1/2">
       <div
-        class="border border-[#EA6A1C] bg-white p-10 grid sm:grid-cols-2 gap-4 rounded-xl"
+        class="border border-[#EA6A1C] bg-white p-10 grid sm:grid-cols-2 gap-4 rounded-xl relative z-10"
       >
         <div
           class="max-w-xs text-center flex flex-col items-center justify-center"
