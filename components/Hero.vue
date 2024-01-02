@@ -28,7 +28,7 @@
         class="absolute rounded-full border-[8px] right-48 opacity-44 circle-4 top-96 border-[#EA6A1C] h-12 w-12"
       ></div>
     </div>
-    <div class="py-28 space-y-2 max-w-3xl text-center mx-auto">
+    <div class="py-32 space-y-2 max-w-3xl text-center mx-auto">
       <h1 class="md:text-7xl text-5xl font-semibold">
         An AI teammate for every
         <span class="text-[#EA6A1C]">recruiting team</span>
@@ -38,8 +38,8 @@
         teams to hire at a fraction of the cost.
       </p>
       <div class="pt-4">
-        <Button class="px-5 text-white rounded-full py-2 bg-[#EA6A1C]"
-          >Get Started</Button
+        <button class="px-6 text-white rounded-full pb-[10px] pt-3 bg-[#EA6A1C]"
+          >Get Started</button
         >
       </div>
     </div>

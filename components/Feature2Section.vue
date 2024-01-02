@@ -35,8 +35,8 @@
           Noon easily surfaces the best candidate profiles for your roles and
           helps you craft personalized outreach messages in seconds.
         </p>
-        <Button class="px-5 text-white rounded-full py-2 bg-[#EA6A1C]"
-          >Show me how</Button
+        <button class="px-6 text-white rounded-full py-3 bg-[#EA6A1C]"
+          >Show me how</button
         >
       </div>
     </div>
