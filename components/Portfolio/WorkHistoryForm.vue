@@ -206,6 +206,13 @@ const inputFieldInterface = [
     type: "textarea",
     required: false,
   },
+  {
+    id: "details",
+    value: [{ value: "" }],
+    label: "Details",
+    type: "multi-text",
+    required: false,
+  },
 ];
 
 const inputFieldsSet = ref(
