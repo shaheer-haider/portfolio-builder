@@ -181,8 +181,8 @@ export default [
             {
                 "id": "interested_engineering_role",
                 "label": "Which engineering roles are you most interested in? (Choose up to four)",
-                "value": "",
-                "type": "select",
+                "value": [],
+                "type": "multi-select",
                 "required": true,
                 "options": () => [
                     {
@@ -193,7 +193,8 @@ export default [
                         "label": "Hardware Engineering",
                         "value": "Hardware Engineering"
                     }
-                ]
+                ],
+                focusInput: false,
             },
             {
                 "id": "github",

@@ -96,6 +96,44 @@
             />
           </div>
         </div>
+        <div v-else class="space-y-1">
+          <label class="font-bold text-lg">
+            {{ field.label }}
+          </label>
+          <div v-for="(item, index) in field.value" class="relative">
+            <input
+              required
+              v-model="item.value"
+              @input="triggerEmit"
+              type="text"
+              class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full"
+            />
+            <button
+              v-if="field.value.length > 1"
+              type="button"
+              @click="
+                () => {
+                  field.value.splice(index, 1);
+                }
+              "
+            >
+              <Icon
+                class="block text-2xl absolute top-2 right-2 text-bgBright"
+                name="material-symbols-light:delete-outline"
+              />
+            </button>
+          </div>
+          <div class="w-full flex justify-end mt-2">
+            <button
+              type="button"
+              @click="() => field.value.push({ value: '' })"
+              class="text-lg font-semibold border text-fgSecondary border-fgSecondary pl-2 pr-3 py-1 rounded transition-all"
+            >
+              <Icon class="block text-2xl" name="material-symbols:add" />
+              <span>add more</span>
+            </button>
+          </div>
+        </div>
       </template>
       <div class="flex justify-end">
         <button

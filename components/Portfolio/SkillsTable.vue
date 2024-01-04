@@ -4,19 +4,31 @@
       <div class="relative">
         <div class="absolute right-0 top-0 h-full flex items-center gap-x-1 mr-1">
           <div class="h-[50%] w-[2px] bg-fgPrimary block"></div>
-          <Icon
-            class="text-2xl text-fgPrimary"
-            name="material-symbols:keyboard-arrow-down-rounded"
-          />
+          <button
+            type="button"
+            @click="
+              () => {
+                if (focusInput) {
+                  focusInput = false;
+                } else {
+                  focusInput = true;
+                }
+              }
+            "
+          >
+            <Icon
+              class="text-2xl text-fgPrimary"
+              :class="focusInput ? 'rotate-180' : ''"
+              name="material-symbols:keyboard-arrow-down-rounded"
+            />
+          </button>
         </div>
 
         <input
           v-model="inputValue"
-          @focusout="focusInput = false"
           @focusin="
             () => {
               focusInput = true;
-              lockSelectFocus = true;
             }
           "
           class="appearance-none px-3 py-2 bg-bgSecondary border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full"
@@ -24,18 +36,19 @@
         />
 
         <div
-          v-if="focusInput || lockSelectFocus"
+          v-if="focusInput"
           class="absolute w-full max-h-[250px] overflow-y-auto bg-white top-[calc(100%_+_1px)] border border-fgPrimary rounded"
         >
           <div
-            v-for="(option, index) in props.fieldData.options()
+            v-for="(option, index) in props.fieldData
+              .options()
               ?.filter((e) => !inputValue || e.toLowerCase().includes(inputValue))
               .filter((e) => !props.fieldData.value.includes(e))"
             class="py-1 px-3 hover:bg-bgPrimary cursor-pointer"
             @click="
               () => {
                 props.fieldData.value.push({ name: option, level: null });
-                lockSelectFocus = false;
+                focusInput = false;
               }
             "
             :class="index !== 0 && 'border-t'"
@@ -96,7 +109,6 @@
                 :name="skill.name"
                 value="advanced"
                 required
-
               />
             </td>
           </tr>
