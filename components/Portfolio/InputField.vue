@@ -1,7 +1,15 @@
 <template>
   <div>
-    <PortfolioWorkHistoryForm v-if="props.fieldData.type == 'work_history'" />
-    <PortfolioEducationForm v-else-if="props.fieldData.type == 'education'" />
+    <PortfolioWorkHistoryForm
+      v-if="props.fieldData.type == 'work_history'"
+      @updateValue="(e) => (props.fieldData.value = e)"
+      :value="props.fieldData.value"
+    />
+    <PortfolioEducationForm
+      v-else-if="props.fieldData.type == 'education'"
+      @updateValue="(e) => (props.fieldData.value = e)"
+      :value="props.fieldData.value"
+    />
     <template v-else>
       <p class="font-medium text-lg space-x-1">
         {{ props.fieldData.label }}
@@ -73,14 +81,16 @@
           :required="props.fieldData.required"
           type="number"
           placeholder="Month"
-          min="1000"
-          max="9999"
+          min="1"
+          max="12"
           class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-28"
         />
         <input
           v-model="props.fieldData.value.year"
           :required="props.fieldData.required"
           type="number"
+          min="1000"
+          max="9999"
           placeholder="Year"
           class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-20 appearance-none"
         />
@@ -93,7 +103,6 @@
 </template>
 
 <script setup>
-
 const emits = defineEmits(["updateValue"]);
 const props = defineProps({
   fieldData: {

@@ -15,7 +15,7 @@
           BACK
         </button>
         <button type="submit" class="btn-primary">
-          {{ currentTabIndex == PortfolioFormsData.length - 1 ? 'SUBMIT' : 'CONTINUE' }}
+          {{ currentTabIndex == PortfolioFormsData.length - 1 ? "SUBMIT" : "CONTINUE" }}
           <Icon name="ep:arrow-right-bold" />
         </button>
       </div>
@@ -67,16 +67,25 @@ function checkCondition(fieldData) {
 }
 
 function continueButtonHandler() {
-  const fieldValues = props.PortfolioFormsData.map((e) =>
+  const allFieldValues = props.PortfolioFormsData.map((e) =>
     e.formData.map((f) => {
       const d = {};
       d[f.id] = f.value;
       return d;
     })
   );
+
   emits("updateCurrentTabIndex", props.currentTabIndex + 1);
 
-  console.log(fieldValues);
+  const location = allFieldValues[0];
+  const role = allFieldValues[1];
+  const experience = allFieldValues[2];
+  const skills = allFieldValues[3];
+
+  console.log(location);
+  console.log(role);
+  console.log(experience);
+  console.log(skills);
 }
 
 function backButtonHandler() {

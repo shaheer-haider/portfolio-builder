@@ -71,23 +71,32 @@
               <span>{{ skill.name }}</span>
             </td>
             <td class="border-b py-2">
-              <input v-model="skill.level" type="radio" name="python" value="beginner" />
+              <input
+                @input="(e) => (skill.value = e.target.value)"
+                type="radio"
+                :name="skill.name"
+                value="beginner"
+                required
+              />
             </td>
             <td class="border-b py-2">
               <input
-                v-model="skill.level"
+                @input="(e) => (skill.value = e.target.value)"
                 type="radio"
-                name="python"
+                :name="skill.name"
                 value="intermediate"
+                required
               />
             </td>
             <td class="border-b">
               <input
+                @input="(e) => (skill.value = e.target.value)"
                 class="py-2"
-                v-model="skill.level"
                 type="radio"
-                name="python"
+                :name="skill.name"
                 value="advanced"
+                required
+
               />
             </td>
           </tr>

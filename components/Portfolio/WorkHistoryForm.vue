@@ -3,31 +3,46 @@
     <div class="flex justify-between w-full">
       <h3 class="text-xl font-semibold">Work History</h3>
       <button
+        type="button"
+        @click="
+          () => inputFieldsSet.push(JSON.parse(JSON.stringify(inputFieldInterface)))
+        "
         class="text-lg font-semibold border border-transparent text-bgBright hover:border-bgBright pl-2 pr-3 py-1 rounded transition-all"
       >
         <Icon class="block text-2xl" name="material-symbols:add" />
         <span>add another</span>
       </button>
     </div>
-
     <div
       class="border border-fgPrimary border-dashed rounded px-2 py-2 -mx-1 space-y-2 mt-2"
-      v-for="inputFields in inputFieldsSet"
+      v-for="(inputFields, index) in inputFieldsSet"
     >
       <template v-for="field in inputFields">
         <input
           v-if="field.type == 'text'"
+          :required="field.required"
+          @input="triggerEmit"
           type="text"
+          v-model="field.value"
           :placeholder="field.label"
           class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full"
         />
         <div v-else-if="field.type == 'checkbox'" class="flex items-center gap-2 py-2">
-          <input type="checkbox" :name="field.id" :id="field.id" class="px-3 py-2" />
+          <input
+            v-model="field.value"
+            @input="triggerEmit"
+            type="checkbox"
+            :name="field.id"
+            :id="field.id"
+            class="px-3 py-2"
+          />
           <label class="select-none" :for="field.id">{{ field.label }}</label>
         </div>
         <div v-else-if="field.type == 'textarea'">
           <textarea
+            v-model="field.value"
             type="text"
+            @input="triggerEmit"
             :placeholder="field.label"
             class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full h-24"
           ></textarea>
@@ -40,15 +55,21 @@
             <span class="font-semibold text-lg">From</span>
             <input
               v-model="field.value.from.month"
+              :required="field.required"
+              @input="triggerEmit"
               type="number"
               placeholder="Month"
-              min="1000"
-              max="9999"
+              min="1"
+              max="12"
               class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full md:w-28"
             />
             <input
               v-model="field.value.from.year"
+              :required="field.required"
               type="number"
+              @input="triggerEmit"
+              min="1000"
+              max="9999"
               placeholder="Year"
               class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full md:w-20 appearance-none"
             />
@@ -57,15 +78,19 @@
             <span class="font-semibold text-lg">To</span>
             <input
               v-model="field.value.to.month"
+              @input="triggerEmit"
               type="number"
               placeholder="Month"
-              min="1000"
-              max="9999"
+              min="1"
+              max="12"
               class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full md:w-28"
             />
             <input
               v-model="field.value.to.year"
+              @input="triggerEmit"
               type="number"
+              min="1000"
+              max="9999"
               placeholder="Year"
               class="px-3 py-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full md:w-20 appearance-none"
             />
@@ -74,6 +99,9 @@
       </template>
       <div class="flex justify-end">
         <button
+        v-if="inputFieldsSet.length > 1"
+          type="button"
+          @click="inputFieldsSet.splice(index, 1)"
           class="text-lg font-semibold border border-transparent text-bgBright hover:border-bgBright pl-2 pr-3 py-1 rounded transition-all !-mt-2"
         >
           <Icon class="block text-2xl" name="material-symbols-light:delete-outline" />
@@ -85,6 +113,9 @@
 </template>
 
 <script setup>
+const props = defineProps(["value"]);
+const emits = defineEmits(["updateValue"]);
+
 const inputFieldInterface = [
   {
     id: "employeeName",
@@ -105,14 +136,14 @@ const inputFieldInterface = [
     value: "",
     label: "Location (optional)",
     type: "text",
-    required: true,
+    required: false,
   },
   {
     id: "currentWork",
     value: "",
     label: "I currently work here",
     type: "checkbox",
-    required: true,
+    required: false,
   },
   {
     id: "workFromTo",
@@ -135,9 +166,14 @@ const inputFieldInterface = [
     value: "",
     label: "Summary (optional)",
     type: "textarea",
-    required: true,
+    required: false,
   },
 ];
 
-const inputFieldsSet = ref([inputFieldInterface]);
+const inputFieldsSet = ref(
+  props.value || [JSON.parse(JSON.stringify(inputFieldInterface))]
+);
+function triggerEmit() {
+  emits("updateValue", inputFieldsSet.value);
+}
 </script>
