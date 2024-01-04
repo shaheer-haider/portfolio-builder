@@ -50,7 +50,7 @@
 </template>
 
 <script setup>
-import portfolioFormsData from "@/assets/data/portfolioFormsData.json";
+import portfolioFormsData from "@/composables/portfolioFormsData";
 
 definePageMeta({
   layout: "portfolio",

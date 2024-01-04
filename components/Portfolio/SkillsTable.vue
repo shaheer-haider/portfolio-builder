@@ -28,7 +28,7 @@
           class="absolute w-full max-h-[250px] overflow-y-auto bg-white top-[calc(100%_+_1px)] border border-fgPrimary rounded"
         >
           <div
-            v-for="(option, index) in props.fieldData.options
+            v-for="(option, index) in props.fieldData.options()
               ?.filter((e) => !inputValue || e.toLowerCase().includes(inputValue))
               .filter((e) => !props.fieldData.value.includes(e))"
             class="py-1 px-3 hover:bg-bgPrimary cursor-pointer"

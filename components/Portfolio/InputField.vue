@@ -24,7 +24,7 @@
         class="px-3 py-2 mt-2 border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full"
       />
       <div v-else-if="props.fieldData.type == 'radio'" class="space-y-3 mt-4">
-        <div v-for="(option, index) in props.fieldData.options" class="space-x-2">
+        <div v-for="(option, index) in props.fieldData.options()" class="space-x-2">
           <input
             v-model="props.fieldData.value"
             :id="props.fieldData.id + index"
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div v-else-if="props.fieldData.type == 'checkbox'" class="space-y-3 mt-4">
-        <div v-for="(option, index) in props.fieldData.options" class="space-x-2">
+        <div v-for="(option, index) in props.fieldData.options()" class="space-x-2">
           <input
             v-model="props.fieldData.value"
             :id="props.fieldData.id + index"
@@ -69,7 +69,7 @@
             class="appearance-none px-3 py-2 bg-bgSecondary border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full"
           >
             <option selected disabled>Select...</option>
-            <option v-for="option in props.fieldData.options" :value="option.value">
+            <option v-for="option in props.fieldData.options()" :value="option.value">
               {{ option.label }}
             </option>
           </select>
