@@ -111,7 +111,7 @@
               @click="field.focusInput = !field.focusInput"
               class="h-[42px] py-2 px-4 bg-bgSecondary select-none border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full"
             >
-              Select Options
+              Select Skills
             </div>
             <div
               v-if="field.focusInput"
