@@ -96,6 +96,64 @@
             />
           </div>
         </div>
+
+        <div v-else-if="field.type == 'multi-select'" class="space-y-3 mt-4 pt-2">
+          <div class="relative">
+            <div class="absolute right-0 top-0 h-full flex items-center gap-x-1 mr-1">
+              <div class="h-[50%] w-[2px] bg-fgPrimary block"></div>
+              <Icon
+                class="text-2xl text-fgPrimary"
+                :class="field.focusInput ? 'rotate-180' : ''"
+                name="material-symbols:keyboard-arrow-down-rounded"
+              />
+            </div>
+            <div
+              @click="field.focusInput = !field.focusInput"
+              class="h-[42px] py-2 px-4 bg-bgSecondary select-none border rounded border-fgPrimary text-fgSecondary focus:outline-none focus:border-fgSecondary w-full"
+            >
+              Select Options
+            </div>
+            <div
+              v-if="field.focusInput"
+              class="absolute w-full max-h-[250px] overflow-y-auto bg-white top-[calc(100%_+_1px)] border border-fgPrimary rounded"
+            >
+              <div
+                v-for="(option, index) in field?.options?.filter(
+                  (op) => !field.value.includes(op.value)
+                )"
+                class="py-1 px-3 hover:bg-bgPrimary cursor-pointer"
+                @click="
+                  () => {
+                    field.value.push(option.value);
+                    field.focusInput = false;
+                  }
+                "
+                :class="index !== 0 && 'border-t'"
+              >
+                <span>{{ option.value }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-x-2 gap-y-1">
+            <span
+              class="border border-fgSecondary px-2 pt-[2px] rounded-lg"
+              v-for="(value, valIndex) in field.value"
+              >{{ value }}
+
+              <button
+                type="button"
+                @click="
+                  () => {
+                    field.value?.splice(valIndex, 1);
+                  }
+                "
+              >
+                x
+              </button>
+            </span>
+          </div>
+        </div>
+
         <div v-else class="space-y-1">
           <label class="font-bold text-lg">
             {{ field.label }}
@@ -137,7 +195,7 @@
       </template>
       <div class="flex justify-end">
         <button
-        v-if="inputFieldsSet.length > 1"
+          v-if="inputFieldsSet.length > 1"
           type="button"
           @click="inputFieldsSet.splice(index, 1)"
           class="text-lg font-semibold border border-transparent text-bgBright hover:border-bgBright pl-2 pr-3 py-1 rounded transition-all !-mt-2"
@@ -154,7 +212,7 @@
 const props = defineProps(["value"]);
 const emits = defineEmits(["updateValue"]);
 
-const inputFieldInterface = [
+const inputFieldInterface = ref([
   {
     id: "employeeName",
     value: "",
@@ -213,10 +271,35 @@ const inputFieldInterface = [
     type: "multi-text",
     required: false,
   },
-];
+  {
+    id: "skills",
+    label: "Skills",
+    value: [],
+    type: "multi-select",
+    required: true,
+    options: [],
+    focusInput: false,
+  },
+]);
+
+async function loadSkillOptions() {
+  // const options = await axios
+  const options = [
+    {
+      label: "Software Engineering",
+      value: "Software Engineering",
+    },
+    {
+      label: "Hardware Engineering",
+      value: "Hardware Engineering",
+    },
+  ];
+  inputFieldInterface.value.find((obj) => obj.id == "skills").options = options;
+}
+await loadSkillOptions();
 
 const inputFieldsSet = ref(
-  props.value || [JSON.parse(JSON.stringify(inputFieldInterface))]
+  props.value || [JSON.parse(JSON.stringify(inputFieldInterface.value))]
 );
 function triggerEmit() {
   emits("updateValue", inputFieldsSet.value);
