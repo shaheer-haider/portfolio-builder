@@ -29,15 +29,15 @@
             <input
               type="text"
               placeholder="Your email address"
-              class="border border-[#EA6A1C] px-6 py-2 rounded-full focus:outline-0 placeholder:text-[#EA6A1C] w-full text-base"
+              class="border border-[#EA6A1C] px-4 md:px-6 py-2 rounded-full focus:outline-0 placeholder:text-[#EA6A1C] w-full text-base"
             />
             <input
               type="text"
               placeholder="Your Linkedin Profile"
-              class="border border-[#EA6A1C] px-6 py-2 rounded-full focus:outline-0 placeholder:text-[#EA6A1C] w-full text-base"
+              class="border border-[#EA6A1C] px-4 md:px-6 py-2 rounded-full focus:outline-0 placeholder:text-[#EA6A1C] w-full text-base"
             />
             <div
-              class="border border-[#EA6A1C] rounded-full relative px-6 py-2 cursor-pointer"
+              class="border border-[#EA6A1C] rounded-full relative px-4 md:px-6 py-2 cursor-pointer"
             >
               <input
                 type="file"
@@ -46,7 +46,7 @@
               />
               <div class="flex w-full justify-between items-center cursor-pointer">
                 <span class="text-[#EA6A1C]">Attach Your Resume</span>
-                <button class="bg-[#EA6A1C] text-white pt-1 px-3 rounded-full">
+                <button class="bg-[#EA6A1C] text-white pt-1 px-1 md:px-3 rounded-full w-[70px] md:w-auto">
                   Add File
                 </button>
               </div>

@@ -2,12 +2,12 @@
   <div
     class="max-w-7xl mx-auto md:py-20 py-12 flex lg:flex-row flex-col px-4 items-center justify-between gap-6"
   >
-    <div class="lg:w-1/2">
-      <h2 class="md:text-5xl text-4xl font-semibold">
-        Say hello to <br />
+    <div class="lg:w-1/2 text-center lg:text-left">
+      <h2 class="text-5xl font-semibold">
+        Say hello to <br class="hidden lg:block" />
         intelligent automation
       </h2>
-      <p class="md:max-w-md">
+      <p class="lg:max-w-md">
         Candidate evaluation can now be fully automated using autonomous AI agents.
       </p>
     </div>
