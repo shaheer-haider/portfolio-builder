@@ -31,15 +31,15 @@
       </button>
 
       <div
-        class="w-full md:w-auto"
+        class="w-full md:w-auto pr-4 md:pr-0"
         id="navbar-default"
         :class="showNavBar ? 'block absolute md:relative top-[75%]' : 'hidden md:block'"
       >
         <ul
-          class="font-medium flex items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg flex-row space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
+          class="font-medium flex flex-col md:flex-row items-end w-full md:items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 space-y-2 rtl:space-x-reverse md:mt-0 md:border-0"
         >
           <li>
-            <NuxtLink to="/" class="">Enter code</NuxtLink>
+            <NuxtLink to="/" class="pr-1 md:pr-0">Enter code</NuxtLink>
           </li>
           <li>
             <button class="px-6 text-white rounded-full py-[10px] bg-[#EA6A1C]">Login</button>
