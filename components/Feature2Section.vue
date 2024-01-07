@@ -18,26 +18,22 @@
       </div>
     </div>
     <div
-      class="flex items-center gap-8 max-w-7xl mx-auto px-4 py-24 lg:flex-row flex-col"
+      class="flex items-center gap-8 max-w-7xl mx-auto px-4 md:py-24 py-12 lg:flex-row flex-col-reverse"
     >
       <div class="flex-1">
-        <img
-          src="@/assets/dashboard.png"
-          class="w-full relative z-10"
-          alt="dashboard"
-        />
+        <img src="@/assets/dashboard.png" class="w-full relative z-10" alt="dashboard" />
       </div>
-      <div class="lg:max-w-lg lg:px-8">
-        <h3 class="text-5xl font-semibold text-white">
+      <div class="lg:max-w-lg lg:px-8 lg:text-start text-center">
+        <h3 class="md:text-5xl text-4xl font-semibold text-white">
           Generate pipeline hands-free
         </h3>
         <p class="text-lg pb-4 text-white">
-          Noon easily surfaces the best candidate profiles for your roles and
-          helps you craft personalized outreach messages in seconds.
+          Noon easily surfaces the best candidate profiles for your roles and helps you
+          craft personalized outreach messages in seconds.
         </p>
-        <button class="px-6 text-white rounded-full py-3 bg-[#EA6A1C]"
-          >Show me how</button
-        >
+        <button class="px-6 text-white rounded-full py-3 bg-[#EA6A1C]">
+          Show me how
+        </button>
       </div>
     </div>
   </div>
@@ -99,8 +95,7 @@
     transform: translate(-60%, 5%) rotate(0deg) translateX(100px) rotate(0deg);
   }
   100% {
-    transform: translate(-60%, 5%) rotate(-360deg) translateX(100px)
-      rotate(360deg);
+    transform: translate(-60%, 5%) rotate(-360deg) translateX(100px) rotate(360deg);
   }
 }
 
@@ -109,8 +104,7 @@
     transform: translate(-60%, 100%) rotate(0deg) translateX(100px) rotate(0deg);
   }
   100% {
-    transform: translate(-60%, 100%) rotate(360deg) translateX(100px)
-      rotate(-360deg);
+    transform: translate(-60%, 100%) rotate(360deg) translateX(100px) rotate(-360deg);
   }
 }
 

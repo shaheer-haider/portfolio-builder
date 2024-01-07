@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-7xl mx-auto py-[120px] px-4">
-    <h4 class="text-5xl font-semibold">
+    <h4 class="md:text-5xl text-4xl font-semibold">
       Trusted by the most talent-dense <br />
       companies
     </h4>
@@ -13,7 +13,7 @@
         <div class="slider space-y-14">
           <div
             v-for="x in 5"
-            class="slide rounded-md px-4 sm:px-8 md:px-10 py-8 md:py-10  border border-[#EA6A1C] bg-white"
+            class="slide rounded-md px-4 sm:px-8 md:px-10 py-8 md:py-10 border border-[#EA6A1C] bg-white"
           >
             <p class="text-start">
               We consistently found high quality candidates for very niche positions and a
@@ -29,7 +29,9 @@
           </div>
         </div>
         <div class="absolute w-full h-10 bg-white top-0 left-0 smoke-rectangle"></div>
-        <div class="absolute w-full h-10 bg-white bottom-0 left-0 smoke-rectangle -scale-100"></div>
+        <div
+          class="absolute w-full h-10 bg-white bottom-0 left-0 smoke-rectangle -scale-100"
+        ></div>
       </div>
     </div>
   </div>
@@ -37,7 +39,7 @@
 
 <style>
 .smoke-rectangle {
-  background: linear-gradient(to bottom, #FCF7F3 0%, rgba(255, 165, 0, 0) 100%);
+  background: linear-gradient(to bottom, #fcf7f3 0%, rgba(255, 165, 0, 0) 100%);
 }
 
 .slider {

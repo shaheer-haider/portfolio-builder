@@ -19,7 +19,7 @@
 
     <div class="flex items-center md:flex-row flex-col gap-8 max-w-4xl mx-auto">
       <div class="md:w-1/2">
-        <h3 class="text-4xl font-semibold">
+        <h3 class="md:text-4xl text-3xl font-semibold">
           Supercharge your <br />
           outbound with Noon
         </h3>
@@ -46,7 +46,9 @@
               />
               <div class="flex w-full justify-between items-center cursor-pointer">
                 <span class="text-[#EA6A1C]">Attach Your Resume</span>
-                <button class="bg-[#EA6A1C] text-white pt-1 px-3 rounded-full">Add File</button>
+                <button class="bg-[#EA6A1C] text-white pt-1 px-3 rounded-full">
+                  Add File
+                </button>
               </div>
             </div>
 
