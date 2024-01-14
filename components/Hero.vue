@@ -28,7 +28,7 @@
         class="absolute rounded-full border-[8px] right-48 opacity-44 circle-4 top-96 border-[#EA6A1C] h-12 w-12"
       ></div>
     </div>
-    <div class="py-32 space-y-6 max-w-7xl text-center mx-auto px-4 sm:px-6 md:px-8 z-10 relative">
+    <div class="py-32 space-y-6 max-w-7xl text-center mx-auto px-6 sm:px-8 md:px-10 z-10 relative">
       <h1 class="md:text-7xl lg:text-8xl text-6xl font-semibold">
         An AI teammate for every
         <span class="text-[#EA6A1C]">recruiting team</span>
