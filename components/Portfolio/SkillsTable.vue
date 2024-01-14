@@ -43,7 +43,7 @@
             v-for="(option, index) in props.fieldData
               .options()
               ?.filter((e) => !inputValue || e.toLowerCase().includes(inputValue))
-              .filter((e) => !props.fieldData.value.includes(e))"
+              .filter((e) => !props.fieldData.value.map(e => e.name).includes(e))"
             class="py-1 px-3 hover:bg-bgPrimary cursor-pointer"
             @click="
               () => {
@@ -123,6 +123,5 @@
 <script setup>
 const props = defineProps(["fieldData"]);
 const focusInput = ref(false);
-const lockSelectFocus = ref(false);
 const inputValue = ref();
 </script>
