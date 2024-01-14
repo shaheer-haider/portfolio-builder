@@ -1,13 +1,13 @@
 <template>
   <div
-    class="max-w-7xl mx-auto md:py-20 py-12 flex lg:flex-row flex-col px-4 items-center justify-between gap-6"
+    class="max-w-7xl mx-auto md:py-20 py-12 flex lg:flex-row flex-col items-center justify-between gap-6 px-4 sm:px-10"
   >
-    <div class="lg:w-1/2 text-center lg:text-left">
+    <div class="lg:w-1/2 text-center lg:text-left px-6 sm:px-0 space-y-4">
       <h2 class="text-5xl font-semibold">
         Say hello to <br class="hidden lg:block" />
         intelligent automation
       </h2>
-      <p class="lg:max-w-md">
+      <p class="max-w-md text-lg md:text-xl text-[#373737] m-auto">
         Candidate evaluation can now be fully automated using autonomous AI agents.
       </p>
     </div>

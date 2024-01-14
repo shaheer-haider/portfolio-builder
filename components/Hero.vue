@@ -28,17 +28,17 @@
         class="absolute rounded-full border-[8px] right-48 opacity-44 circle-4 top-96 border-[#EA6A1C] h-12 w-12"
       ></div>
     </div>
-    <div class="py-32 space-y-2 max-w-3xl text-center mx-auto px-2">
-      <h1 class="md:text-7xl text-5xl font-semibold">
+    <div class="py-32 space-y-6 max-w-7xl text-center mx-auto px-4 sm:px-6 md:px-8 z-10 relative">
+      <h1 class="md:text-7xl lg:text-8xl text-6xl font-semibold">
         An AI teammate for every
         <span class="text-[#EA6A1C]">recruiting team</span>
       </h1>
-      <p class="max-w-sm mx-auto text-[#373737]">
+      <p class="max-w-md mx-auto text-lg md:text-xl text-[#373737]">
         Deploy intelligent AI agents to handle your sourcing, enabling your
         teams to hire at a fraction of the cost.
       </p>
       <div class="pt-4">
-        <NuxtLink to="/portfolio" class="px-6 text-white rounded-full py-3 bg-[#EA6A1C] z-10 relative"
+        <NuxtLink to="/portfolio" class="px-6 text-white rounded-full py-4 bg-[#EA6A1C] z-10 relative"
           >Get Started</NuxtLink>
       </div>
     </div>

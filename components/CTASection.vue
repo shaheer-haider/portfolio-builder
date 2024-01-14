@@ -19,11 +19,11 @@
 
     <div class="flex items-center md:flex-row flex-col gap-8 max-w-4xl mx-auto">
       <div class="md:w-1/2">
-        <h3 class="md:text-4xl text-3xl font-semibold">
+        <h3 class="md:text-5xl text-4xl font-semibold">
           Supercharge your <br />
           outbound with Noon
         </h3>
-        <p>Join our mailing list!</p>
+        <p class="text-lg md:text-xl">Join our mailing list!</p>
         <div class="pt-5">
           <form class="space-y-3">
             <input
@@ -52,7 +52,7 @@
               </div>
             </div>
 
-            <Button class="px-5 text-white rounded-full py-2 bg-[#EA6A1C]">Submit</Button>
+            <button class="px-5 text-white rounded-full pb-2 pt-3 bg-[#EA6A1C]">Submit</button>
           </form>
         </div>
       </div>

@@ -24,10 +24,10 @@
         <img src="@/assets/dashboard.png" class="w-full relative z-10" alt="dashboard" />
       </div>
       <div class="lg:max-w-lg lg:px-8 lg:text-start text-center">
-        <h3 class="md:text-5xl text-4xl font-semibold text-white">
+        <h3 class="text-5xl font-semibold text-white">
           Generate pipeline hands-free
         </h3>
-        <p class="text-lg pb-4 text-white">
+        <p class="text-lg md:text-xl pb-4 text-white">
           Noon easily surfaces the best candidate profiles for your roles and helps you
           craft personalized outreach messages in seconds.
         </p>

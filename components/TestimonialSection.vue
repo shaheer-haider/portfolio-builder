@@ -1,6 +1,6 @@
 <template>
-  <div class="max-w-7xl mx-auto py-[120px] px-4">
-    <h4 class="md:text-5xl text-4xl font-semibold">
+  <div class="max-w-7xl mx-auto py-[120px] px-8 sm:px-16">
+    <h4 class="text-5xl font-semibold">
       Trusted by the most talent-dense <br />
       companies
     </h4>
