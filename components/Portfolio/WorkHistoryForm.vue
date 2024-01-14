@@ -293,6 +293,14 @@ async function loadSkillOptions() {
       label: "Hardware Engineering",
       value: "Hardware Engineering",
     },
+    {
+      label: "DevOps Engineering",
+      value: "DevOps Engineering",
+    },
+    {
+      label: "Electrical Engineering",
+      value: "Electrical Engineering",
+    },
   ];
   inputFieldInterface.value.find((obj) => obj.id == "skills").options = options;
 }

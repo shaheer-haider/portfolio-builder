@@ -1,7 +1,15 @@
 <template>
   <div class="bg-bgSecondary min-h-[600px] pb-16 pt-8 page-container">
     <div class="m-auto flex flex-col lg:flex-row justify-center gap-10">
-      <img src="@/assets/images/edit-avatar.png" class="w-[150px] h-[150px] m-auto lg:m-0 mt-7" alt="" />
+      <div class="relative w-[150px] h-[150px] rounded-full overflow-hidden  lg:m-0 mt-7 m-auto">
+        <input
+          @change="(e) => updateProfielPic(e)"
+          class="w-full h-full absolute top-0 right-0 opacity-0 cursor-pointer"
+          type="file"
+          accept="img"
+        />
+        <img :src="profilePic" class="w-[150px] h-[150px]" />
+      </div>
       <div class="max-w-[800px] px-8 m-auto lg:m-0">
         <form @submit.prevent="saveProfileFormSubmit" class="grid grid-cols-2 gap-x-5">
           <div
@@ -31,7 +39,7 @@
             />
           </div>
           <div class="py-10 gap-2 flex flex-wrap">
-            <button class="btn-primary  w-28 sm:w-max">SAVE</button>
+            <button class="btn-primary w-28 sm:w-max">SAVE</button>
             <button class="btn-secondary w-28 sm:w-max">CANCEL</button>
           </div>
         </form>
@@ -46,6 +54,29 @@
 </template>
 
 <script setup>
+const userId = useRoute().params.id;
+const profilePic = ref(null);
+
+function fetchProfilePic() {
+  profilePic.value = null || "/edit-avatar.png"; // get profile pic
+}
+fetchProfilePic();
+
+function updateProfielPic(e) {
+  const files = e.target.files;
+  if (!files.length) return;
+
+
+  const FR = new FileReader();
+
+  FR.addEventListener("load", function (evt) {
+    profilePic.value = evt.target.result;
+  });
+
+  const image = files[0];
+  FR.readAsDataURL(image)
+}
+
 definePageMeta({
   layout: "profile",
 });
@@ -89,8 +120,7 @@ function getFormValues(formFields) {
   });
 }
 function saveProfileFormSubmit() {
-  const formValues = getFormValues(formFields.value)
-  console.log(formValues)
-
+  const formValues = getFormValues(formFields.value);
+  console.log(formValues);
 }
 </script>

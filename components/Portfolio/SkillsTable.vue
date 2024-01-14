@@ -57,63 +57,65 @@
           </div>
         </div>
       </div>
-      <table v-if="props.fieldData.value?.length" class="w-full text-center">
-        <thead>
-          <tr>
-            <th class="border-b py-1 w-[350px]"></th>
-            <th class="border-b py-1">Beginner</th>
-            <th class="border-b py-1">Intermediate</th>
-            <th class="border-b py-1">Advanced</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="skill in props.fieldData.value">
-            <td class="border-b py-2 w-[350px] text-left pl-2 flex items-center gap-x-1">
-              <Icon
-                @click="
-                  () => {
-                    const index = props.fieldData.value.indexOf(skill);
-                    if (index !== -1) {
-                      props.fieldData.value.splice(index, 1);
+      <div class="overflow-x-auto w-full border">
+        <table v-if="props.fieldData.value?.length" class="w-full text-center">
+          <thead>
+            <tr>
+              <th class="border-b py-1 w-[100px] sm:w-[350px]"></th>
+              <th class="border-b py-1 px-2">Beginner</th>
+              <th class="border-b py-1 px-2">Intermediate</th>
+              <th class="border-b py-1 px-2">Advanced</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="skill in props.fieldData.value">
+              <td class="border-b py-2 w-[100px] sm:w-[350px] text-left pl-2 flex items-center gap-x-1">
+                <Icon
+                  @click="
+                    () => {
+                      const index = props.fieldData.value.indexOf(skill);
+                      if (index !== -1) {
+                        props.fieldData.value.splice(index, 1);
+                      }
                     }
-                  }
-                "
-                class="text-xl cursor-pointer hover:text-red-600"
-                name="material-symbols-light:delete-outline"
-              />
-              <span>{{ skill.name }}</span>
-            </td>
-            <td class="border-b py-2">
-              <input
-                @input="(e) => (skill.value = e.target.value)"
-                type="radio"
-                :name="skill.name"
-                value="beginner"
-                required
-              />
-            </td>
-            <td class="border-b py-2">
-              <input
-                @input="(e) => (skill.value = e.target.value)"
-                type="radio"
-                :name="skill.name"
-                value="intermediate"
-                required
-              />
-            </td>
-            <td class="border-b">
-              <input
-                @input="(e) => (skill.value = e.target.value)"
-                class="py-2"
-                type="radio"
-                :name="skill.name"
-                value="advanced"
-                required
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                  "
+                  class="text-xl cursor-pointer hover:text-red-600"
+                  name="material-symbols-light:delete-outline"
+                />
+                <span>{{ skill.name }}</span>
+              </td>
+              <td class="border-b py-2">
+                <input
+                  @input="(e) => (skill.value = e.target.value)"
+                  type="radio"
+                  :name="skill.name"
+                  value="beginner"
+                  required
+                />
+              </td>
+              <td class="border-b py-2">
+                <input
+                  @input="(e) => (skill.value = e.target.value)"
+                  type="radio"
+                  :name="skill.name"
+                  value="intermediate"
+                  required
+                />
+              </td>
+              <td class="border-b">
+                <input
+                  @input="(e) => (skill.value = e.target.value)"
+                  class="py-2"
+                  type="radio"
+                  :name="skill.name"
+                  value="advanced"
+                  required
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
