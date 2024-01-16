@@ -68,7 +68,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="skill in props.fieldData.value">
+            <tr v-for="skill, index in props.fieldData.value">
               <td class="border-b py-2 w-[100px] sm:w-[350px] text-left pl-2 flex items-center gap-x-1">
                 <Icon
                   @click="
@@ -87,8 +87,8 @@
               <td class="border-b py-2">
                 <input
                   @input="(e) => (skill.value = e.target.value)"
+                  :checked="skill.value == 'beginner'"
                   type="radio"
-                  :name="skill.name"
                   value="beginner"
                   required
                 />
@@ -96,8 +96,8 @@
               <td class="border-b py-2">
                 <input
                   @input="(e) => (skill.value = e.target.value)"
+                  :checked="skill.value == 'intermediate'"
                   type="radio"
-                  :name="skill.name"
                   value="intermediate"
                   required
                 />
@@ -105,9 +105,9 @@
               <td class="border-b">
                 <input
                   @input="(e) => (skill.value = e.target.value)"
+                  :checked="skill.value == 'advanced'"
                   class="py-2"
                   type="radio"
-                  :name="skill.name"
                   value="advanced"
                   required
                 />
